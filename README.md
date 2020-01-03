@@ -4,6 +4,7 @@
 
 ```php
 include_once "diretorio/ErrorHandler.class.php";
+
 ```
 
 ## Chamada da Classe
