@@ -5,28 +5,28 @@ class ErrorHandler {
 
     private function setErrorArray($err, $code = 0) {
         return array(
-            "code"          => $code,
-            "menssage"      => $err,
-            "file"          => __FILE__,
-            "line"          => "",
-            "previous"      => "",
-            "trace"         => "",
+            "code" => $code,
+            "menssage" => $err,
+            "file" => __FILE__,
+            "line" => "",
+            "previous" => "",
+            "trace" => "",
             "traceAsString" => "Class Error",
         );
     }
 
-    public function try ($callback) {
+    function try ($callback) {
         if (is_callable($callback)) {
             try {
                 $callback();
             } catch (Exception $e) {
                 $this->err[] = array(
-                    "code"          => $e->getCode(),
-                    "menssage"      => $e->getMessage(),
-                    "file"          => $e->getFile(),
-                    "line"          => $e->getLine(),
-                    "previous"      => $e->getPrevious(),
-                    "trace"         => $e->getTrace(),
+                    "code" => $e->getCode(),
+                    "menssage" => $e->getMessage(),
+                    "file" => $e->getFile(),
+                    "line" => $e->getLine(),
+                    "previous" => $e->getPrevious(),
+                    "trace" => $e->getTrace(),
                     "traceAsString" => $e->getTraceAsString(),
                 );
             }
@@ -36,7 +36,7 @@ class ErrorHandler {
         return $this;
     }
 
-    public function catch ($callback) {
+    function catch ($callback) {
         if (is_callable($callback)) {
             $callback($this->err);
         } else {
@@ -45,7 +45,7 @@ class ErrorHandler {
         return $this;
     }
 
-    public function finally ($callback) {
+    function finally ($callback) {
         if (is_callable($callback)) {
             $callback();
         } else {
@@ -53,6 +53,4 @@ class ErrorHandler {
         }
         return $this;
     }
-
 }
-
