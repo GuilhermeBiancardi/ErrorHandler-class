@@ -15,7 +15,7 @@ $dir = new ErrorHandler();
 
 ### Como gerar um Erro
 
-Essa classe utili-za da mesma funcionalidade do bloco **try{}catch(){}** inserindo apenas algumas utilidades, por isso a forma de adicionar um erro à classe é a mesma.
+Essa classe utiliza da mesma funcionalidade do bloco **try{}catch(){}** inserindo apenas algumas utilidades, por isso a forma de adicionar um erro à classe é a mesma.
 
 ```php
 $ErrorHandler->try(function(){
